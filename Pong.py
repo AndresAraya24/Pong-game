@@ -115,7 +115,6 @@ while True:
         ball.dy *= -1
         os.system('afplay bounce.wav&')
 
-
     # Scoring system
     if ball.xcor() > 580:
         ball.goto(0, 0)
@@ -131,20 +130,16 @@ while True:
         li_sc.clear()
         li_sc.write('Player A: {}  Player B: {}'.format(score_a, score_b), align='center', font=('Courier', 24, 'normal'))
 
-
     # Paddle bounce
     if (ball.xcor() > 540 and ball.xcor() < 550) and (ball.ycor() < paddle_b.ycor() + 60 and ball.ycor() > paddle_b.ycor()-60):
         ball.setx(540)
         ball.dx *= -1
         os.system('afplay bounce.wav&')
 
-
-
     if (ball.xcor() < -540 and ball.xcor() > -550) and (ball.ycor() < paddle_a.ycor() + 60 and ball.ycor() > paddle_a.ycor()-60):
         ball.setx(-540)
         ball.dx *= -1
         os.system('afplay bounce.wav&')
-
 
     # Winner
     if score_a > 5 and score_a > score_b +1:
